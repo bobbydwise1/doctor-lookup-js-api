@@ -1,4 +1,17 @@
 export class doctorLookup {
+  createURLForDocNames(fullname,symptom,geoLocation,radius,limit) {
+    let url = ('https://api.betterdoctor.com/2016-03-01/doctors?query=' +
+    symptom +
+    '&location=' +
+    geoLocation.replace(",","%2C") +
+    "%2C" + radius +
+    "&sort=best-match-asc&skip=0&limit=" +
+    limit +
+    '&user_key=')
+    console.log("search doc names url: ", url)
+    return url;
+  }
+
   getDoctorNames() {
     return new Promise(function(resolve, reject) {
       let request = new XMLHttpRequest();

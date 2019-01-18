@@ -10,10 +10,13 @@ $(document).ready(function() {
 
   let listOfDocs = new doctorLookup();
   let promise = listOfDocs.getDoctorNames();
+  console.log("listOfDocs: ",listOfDocs)
 
   promise.then(function(response) {
 
     let body = JSON.parse(response);
+
+
 
 console.log(body)
 

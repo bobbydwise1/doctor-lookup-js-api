@@ -6,14 +6,23 @@
   </head>
   <body>
     <h1>Doctor Lookup Index Page</h1>
-    <div id="doctorOutput">
-      <ul>
+    <h6>Input Form</h6>
+    <form class="form-group" action="index.html">
+      <div class="container">
+        <label for="searchDocName">Doctor Name</label>
+        <input type="text" name="searchDocName" id="searchDocName">
+        <label for="searchInputSymptom">Medical Issue</label>
+        <input type="text" name="searchInputSymptom" id="searchInputSymptom">
+        <label for="searchInputNumResults">Number of Search Results</label>
+        <input type="text" name="searchInputNumResults" id="searchInputNumResults">
+        <button type="submit" name="button">Submit</button>
+      </div>
+    </form>
 
-      </ul>
+    <div class="container" id="doctorOutput">
     </div>
 
     <div class="showErrors">
-
     </div>
   </body>
 </html>
