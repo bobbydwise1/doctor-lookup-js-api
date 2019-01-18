@@ -1,8 +1,8 @@
 export class doctorLookup {
-  customFunction() {
+  getDoctorNames() {
     return new Promise(function(resolve, reject) {
       let request = new XMLHttpRequest();
-      let url = 'https://bikeindex.org:443/api/v3/search?page=1&per_page=3&location=IP&distance=10&stolenness=stolen';
+      let url = 'https://api.betterdoctor.com/2016-03-01/doctors?location=37.773,-122.413,100&skip=2&limit=10&user_key=${process.env.user_key}';
       request.onload = function() {
         if (this.status === 200) {
           resolve(request.response);
@@ -15,3 +15,6 @@ export class doctorLookup {
     });
   }
 }
+
+//note use process.env.user_key for api key
+//for App name use Epicodus's App
