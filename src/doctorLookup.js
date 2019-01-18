@@ -5,7 +5,9 @@ export class DoctorLookup {
     '&location=' +
     geoLocation.replace(",","%2C") +
     "%2C" + radius +
-    "&sort=best-match-asc&skip=0&limit=" +
+    "&sort=best-match-asc" +
+    "&fields=profile(first_name,last_name),practices(visit_address,phones,website,accepts_new_patients)" +
+    "&skip=0&limit=" +
     limit +
     '&user_key=');
   }
