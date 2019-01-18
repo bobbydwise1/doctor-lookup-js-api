@@ -2,7 +2,7 @@ export class doctorLookup {
   getDoctorNames() {
     return new Promise(function(resolve, reject) {
       let request = new XMLHttpRequest();
-      let url = 'https://api.betterdoctor.com/2016-03-01/doctors?location=37.773,-122.413,100&skip=2&limit=10&user_key=' + process.env.user_key;
+      let url = 'https://api.betterdoctor.com/2016-03-01/doctors?query=cancer&location=45.5122%2C-122.6587%2C5&user_location=45.5122%2C-122.6587&sort=best-match-asc&skip=0&limit=3&user_key=' + process.env.user_key;
       request.onload = function() {
         if (this.status === 200) {
           resolve(request.response);

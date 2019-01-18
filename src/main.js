@@ -21,6 +21,7 @@ console.log(body)
 
 
     console.log(doctor_array);
+    $("#doctorOutput").text(doctor_array)
 
   }, function(error) {
       $('.showErrors').text(`There was an error processing your request: ${error.message}`);
