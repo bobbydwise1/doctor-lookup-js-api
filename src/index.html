@@ -5,16 +5,17 @@
     <title>Doctor Lookup</title>
   </head>
   <body>
-    <h1>Doctor Lookup Index Page</h1>
-    <h6>Input Form</h6>
+    <h1>Doctor Lookup in Portland, Oregon</h1>
     <form id="mainInputForm" class="form-group" action="index.html">
-      <div class="container">
-        <!-- <label for="searchDocName">Doctor Name</label>
-        <input type="text" name="searchDocName" id="searchDocName"> -->
-        <label for="searchInputSymptom">Medical Issue</label>
-        <input type="text" name="searchInputSymptom" id="searchInputSymptom">
-        <label for="searchInputNumResults">Number of Search Results</label>
-        <input type="text" name="searchInputNumResults" id="searchInputNumResults">
+      <div class="container mainSearchBox">
+        <div class="form-group">
+          <label for="searchInputSymptom">Medical Issue</label>
+          <input type="text" name="searchInputSymptom" id="searchInputSymptom" pattern="[A-Za-z\s]+">
+        </div>
+        <div class="form-group">
+          <label for="searchInputNumResults">Number of Search Results</label>
+          <input type="number" name="searchInputNumResults" id="searchInputNumResults" min="1" max="100">
+        </div>
         <button type="submit" name="button">Submit</button>
       </div>
     </form>
