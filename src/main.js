@@ -20,9 +20,15 @@ $(document).ready(function() {
     promise.then(function(response) {
       let body = JSON.parse(response);
       let doctor_array = body.data;
-      console.log(doctor_array);
-      $("#doctorOutput").text(doctor_array)
-
+      for (let i = 0; i < doctor_array.length; i++) {
+        document.getElementById("doctorOutput").innerHTML =
+        '<p>Search Result: ${i}</p>
+        <p>${doctor_array[i].profile.first_name} ${doctor_array[i].profile.last_name}</p>
+        <p>Accepts new patients? ${doctor_array[i].practices[0].accepts_new_patients}</p>
+        <p>Website: " ${doctor_array[i].practices[0].website}</p>
+        <p>${doctor_array[i].practices[0].visit_address.street}</p>
+        <p>${doctor_array[i].practices[0].visit_address.city} ${doctor_array[i].practices[0].visit_address.state} ${doctor_array[i].practices[0].visit_address.zip}</p>
+        <p>${doctor_array[i].practices[0].phones}</p>'
     }, function(error) {
         $('.showErrors').text(`There was an error processing your request: ${error.message}`);
     });
